@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>URL detection</title>   
+</head>
+
+<body style="background-color:powderblue;">
+
+<center>
+<div class=" container">
+    <div class="row">
+        <div class="form col-md" id="form1">
+            <h2><u>PHISHING URL DETECTION</u></h2>
+    
+            <br>
+            <form action="/" method ="post">
+                <label for="url" class="form__label">URL : </label>
+                <input type="text" class="form__input" name ='url' id="url" placeholder="Enter URL" required="" />
+
+                <button class="button" role="button" >Check here</button>
+            </form>
+           
+    </div>
+    
+    <div class="col-md" id="form2">
+        
+        <br>
+        <h6 class = "right "><a href= {{ url }} target="_blank">{{ url }}</a></h6>
+           
+        <br>
+        <h3 id="prediction"></h3>
+        
+    </div> 
+</div>
+
+<script>
+    let x = '{{xx}}';
+    let isSafe = false;
+    if (x >= 0.5) {
+         isSafe = true;
+    }
+
+    if (isSafe) {
+        var label = "Website is safe to use.";
+        document.getElementById("prediction").innerHTML = label;
+        document.getElementById("button1").style.display = "block";
+    } else {
+        var label = "Website is unsafe to use.";
+        document.getElementById("prediction").innerHTML = label;
+        document.getElementById("button2").style.display = "block";
+    }
+</script>
+
+</center>   
+</body>
+
+</html>
